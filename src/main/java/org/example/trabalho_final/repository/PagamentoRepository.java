@@ -34,7 +34,6 @@ public class PagamentoRepository {
                 sql,
                 pagamento.getVendaId(),
                 pagamento.getFormaPagamento(),
-                pagamento.getStatus(),
                 pagamento.getValor()
         ) > 0;
     }

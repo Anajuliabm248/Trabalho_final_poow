@@ -39,8 +39,8 @@ Projeto de 'pseudo' sistema de compras, gestão de vendas e controle de estoque 
 
 #### Ferramentas utilizadas:
 - Java
-- Jakarta servelet/JSP
-- Arquitetura MVC (controller, dao, model, service, view(webapp))
+- SpringBoot
+- Arquitetura Spring MVC
 - Maven (gerenciamento de dependências)
 - banco de dados PostgreSQL
 - HTML, CSS, JS e BootsStrap (front-end)

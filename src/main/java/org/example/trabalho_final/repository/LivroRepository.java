@@ -87,11 +87,10 @@ public class LivroRepository {
     }
 
     public List<Livro> buscarPorNome(String nome) {
-        String sql = """
-                SELECT * FROM livro WHERE LOWER(nome) LIKE LOWER(?)
-                """;
-
-        return jdbcTemplate.query(sql, rowMapper, nome);
+        String sql = "SELECT * FROM livro WHERE LOWER(nome) LIKE LOWER(?)";
+        // Adiciona o % antes e depois do nome para o operador LIKE
+        String termoBusca = "%" + nome + "%";
+        return jdbcTemplate.query(sql, rowMapper, termoBusca);
     }
 
     public List<Livro> buscarPorCategoria(int categoriaId) {

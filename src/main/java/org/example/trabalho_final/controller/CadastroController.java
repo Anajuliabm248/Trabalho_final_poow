@@ -61,6 +61,9 @@ public class CadastroController {
             cliente.setTelefone(telefone);
             cliente.setSenha(senha);
 
+            cliente.setAtivo(true);
+            cliente.setTipo("CLIENTE");
+
             sucesso = clienteService.cadastrar(cliente);
         }
         if (sucesso) {

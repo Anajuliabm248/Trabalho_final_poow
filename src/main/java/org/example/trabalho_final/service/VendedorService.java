@@ -10,11 +10,12 @@ public class VendedorService {
 
     private final VendedorRepository repository;
     private final AuthService authService;
-    private VendedorRepository vendedorRepository;
+    private final VendedorRepository vendedorRepository;
 
-    public VendedorService(VendedorRepository repository, AuthService authService) {
+    public VendedorService(VendedorRepository repository, AuthService authService, VendedorRepository vendedorRepository) {
         this.repository = repository;
         this.authService = authService;
+        this.vendedorRepository = vendedorRepository;
     }
 
     @Transactional
