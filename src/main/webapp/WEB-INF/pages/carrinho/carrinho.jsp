@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page isELIgnored="false" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
@@ -28,7 +27,8 @@
         <div class="empty-state">
             Seu carrinho está vazio. A estante está esperando um primeiro escolhido.
             <div class="mt-3">
-                <a href="${pageContext.request.contextPath}/livro" class="btn btn-brand">Ver livros</a>
+                    <%-- CORRIGIDO: /livro → /livros --%>
+                <a href="${pageContext.request.contextPath}/livros" class="btn btn-brand">Ver livros</a>
             </div>
         </div>
     </c:if>
@@ -56,8 +56,7 @@
                         </div>
 
                         <div class="cart-actions">
-                            <form method="post" action="${pageContext.request.contextPath}/carrinho" class="d-flex justify-content-end">
-                                <input type="hidden" name="acao" value="remover" />
+                            <form method="post" action="${pageContext.request.contextPath}/carrinho/remover" class="d-flex justify-content-end">
                                 <input type="hidden" name="itemId" value="${item.id}" />
                                 <button type="submit" class="btn btn-soft-danger">
                                     <i class="bi bi-trash3 me-1"></i> Excluir
@@ -68,7 +67,7 @@
                 </c:forEach>
 
                 <div class="mt-4">
-                    <a href="${pageContext.request.contextPath}/livro" class="btn btn-ghost">
+                    <a href="${pageContext.request.contextPath}/livros" class="btn btn-ghost">
                         <i class="bi bi-arrow-left me-2"></i> Continuar comprando
                     </a>
                 </div>
@@ -92,11 +91,11 @@
                     <strong>R$ ${carrinho.valorTotal}</strong>
                 </div>
 
-                <a class="btn btn-brand w-100 mt-4" href="${pageContext.request.contextPath}/venda?acao=checkout">
+                <a class="btn btn-brand w-100 mt-4" href="${pageContext.request.contextPath}/venda/checkout">
                     Finalizar compra
                 </a>
 
-                <a class="btn btn-ghost w-100 mt-3" href="${pageContext.request.contextPath}/livro">
+                <a class="btn btn-ghost w-100 mt-3" href="${pageContext.request.contextPath}/livros">
                     Cancelar pedido
                 </a>
 

@@ -70,10 +70,7 @@ public class LivroController {
      * Página de detalhes
      */
     @GetMapping("/{id}")
-    public String detalhe(
-            @PathVariable Integer id,
-            Model model) {
-
+    public String detalhe(@PathVariable Integer id, Model model) {
         Livro livro = livroService.buscarPorId(id);
 
         if (livro == null) {

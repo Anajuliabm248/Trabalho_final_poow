@@ -35,7 +35,8 @@
         <small class="muted">* indica campo obrigatório</small>
     </header>
 
-    <form method="post" action="${pageContext.request.contextPath}/livro" enctype="multipart/form-data" class="livro-form-card">
+    <%-- CORRIGIDO: action /livro → /livros --%>
+    <form method="post" action="${pageContext.request.contextPath}/livros" enctype="multipart/form-data" class="livro-form-card">
         <input type="hidden" name="id" value="${livro.id}" />
 
         <div class="livro-grid">
@@ -80,7 +81,7 @@
                                 <option value="">Selecione</option>
                                 <c:forEach var="cat" items="${categorias}">
                                     <option value="${cat.id}" <c:if test="${livro != null and livro.categoriaId == cat.id}">selected</c:if>>
-                                        ${cat.nome}
+                                            ${cat.nome}
                                     </option>
                                 </c:forEach>
                             </select>
@@ -129,7 +130,8 @@
                         <button type="submit" class="btn btn-brand">
                             <i class="bi bi-floppy me-2"></i> Salvar produto
                         </button>
-                        <a href="${pageContext.request.contextPath}/vendedor?acao=estoque" class="btn btn-ghost">
+                        <%-- CORRIGIDO: /vendedor?acao=estoque → /vendedor/estoque --%>
+                        <a href="${pageContext.request.contextPath}/vendedor/estoque" class="btn btn-ghost">
                             Cancelar
                         </a>
                     </div>
@@ -150,7 +152,7 @@
 
         const reader = new FileReader();
         reader.onload = function (e) {
-            preview.innerHTML = `<img src="${e.target.result}" alt="Prévia da capa">`;
+            preview.innerHTML = '<img src="' + e.target.result + '" alt="Prévia da capa">';
         };
         reader.readAsDataURL(file);
     });

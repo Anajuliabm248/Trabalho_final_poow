@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page isELIgnored="false" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
@@ -32,35 +31,38 @@
         <div class="table-shell">
             <table class="table">
                 <thead>
-                    <tr>
-                        <th scope="col">Pedido</th>
-                        <th scope="col">Data</th>
-                        <th scope="col">Total</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Ação</th>
-                    </tr>
+                <tr>
+                    <th scope="col">Pedido</th>
+                    <th scope="col">Data</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Ação</th>
+                </tr>
                 </thead>
                 <tbody>
-                    <c:forEach var="venda" items="${vendas}">
-                        <tr>
-                            <td>#${venda.id}</td>
-                            <td>${venda.dtVenda}</td>
-                            <td>R$ ${venda.valorTotal}</td>
-                            <td><span class="tag tag-success">${venda.status}</span></td>
-                            <td>
-                                <c:if test="${venda.status == 'CONCLUIDA'}">
-                                    <a class="btn btn-soft-danger" href="${pageContext.request.contextPath}/venda?acao=cancelar&id=${venda.id}" onclick="return confirm('Cancelar este pedido?')">Cancelar</a>
-                                </c:if>
-                            </td>
-                        </tr>
-                    </c:forEach>
+                <c:forEach var="venda" items="${vendas}">
+                    <tr>
+                        <td>#${venda.id}</td>
+                        <td>${venda.dtVenda}</td>
+                        <td>R$ ${venda.valorTotal}</td>
+                        <td><span class="tag tag-success">${venda.status}</span></td>
+                        <td>
+                            <c:if test="${venda.status == 'CONCLUIDA'}">
+                                <form method="post" action="${pageContext.request.contextPath}/venda/${venda.id}/cancelar"
+                                      onsubmit="return confirm('Cancelar este pedido?')">
+                                    <button type="submit" class="btn btn-soft-danger">Cancelar</button>
+                                </form>
+                            </c:if>
+                        </td>
+                    </tr>
+                </c:forEach>
                 </tbody>
             </table>
         </div>
     </c:if>
 
     <div class="mt-4">
-        <a href="${pageContext.request.contextPath}/livro" class="btn btn-ghost">
+        <a href="${pageContext.request.contextPath}/livros" class="btn btn-ghost">
             <i class="bi bi-arrow-left me-2"></i> Continuar comprando
         </a>
     </div>

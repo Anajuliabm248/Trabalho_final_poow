@@ -44,9 +44,9 @@
             </a>
 
             <a class="btn btn-ghost text-white border-white"
-               href="${pageContext.request.contextPath}/carrinho">
-                <i class="bi bi-cart3 me-2"></i>
-                Carrinho
+               href="${pageContext.request.contextPath}/login">
+                <i class="bi bi-box-arrow-in-right"></i>
+                Entrar
             </a>
         </div>
     </section>

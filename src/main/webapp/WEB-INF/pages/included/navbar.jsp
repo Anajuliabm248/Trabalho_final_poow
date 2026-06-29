@@ -1,11 +1,10 @@
-
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page isELIgnored="false" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <nav class="navbar navbar-expand-lg site-navbar navbar-light">
   <div class="container-fluid px-3 px-xl-4">
-    <a class="navbar-brand brand-link" href="${pageContext.request.contextPath}/livro">
+    <a class="navbar-brand brand-link" href="${pageContext.request.contextPath}/">
       <img src="${pageContext.request.contextPath}/img/logo.png" alt="Livraria Antiqua" class="brand-logo">
       <span class="brand-name">Livraria Antiqua</span>
     </a>
@@ -19,7 +18,7 @@
         <c:when test="${sessionScope.usuario == null}">
           <ul class="navbar-nav mx-auto nav-pill-wrap">
             <li class="nav-item">
-              <a class="${activeNav == 'catalogo' ? 'nav-link nav-pill active' : 'nav-link nav-pill'}" href="${pageContext.request.contextPath}/livro">
+              <a class="${activeNav == 'home' ? 'nav-link nav-pill active' : 'nav-link nav-pill'}" href="${pageContext.request.contextPath}/">
                 <i class="bi bi-house-door"></i><span>Home</span>
               </a>
             </li>
@@ -39,7 +38,7 @@
         <c:when test="${sessionScope.usuario != null and sessionScope.usuario.tipo == 'CLIENTE'}">
           <ul class="navbar-nav mx-auto nav-pill-wrap">
             <li class="nav-item">
-              <a class="${activeNav == 'catalogo' ? 'nav-link nav-pill active' : 'nav-link nav-pill'}" href="${pageContext.request.contextPath}/livro">
+              <a class="${activeNav == 'catalogo' ? 'nav-link nav-pill active' : 'nav-link nav-pill'}" href="${pageContext.request.contextPath}/livros">
                 <i class="bi bi-house-door"></i><span>Home</span>
               </a>
             </li>
@@ -49,7 +48,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="${activeNav == 'pedidos' ? 'nav-link nav-pill active' : 'nav-link nav-pill'}" href="${pageContext.request.contextPath}/venda?acao=historico">
+              <a class="${activeNav == 'pedidos' ? 'nav-link nav-pill active' : 'nav-link nav-pill'}" href="${pageContext.request.contextPath}/venda/historico">
                 <i class="bi bi-receipt"></i><span>Meus pedidos</span>
               </a>
             </li>
@@ -64,7 +63,7 @@
               <li><a class="dropdown-item" href="${pageContext.request.contextPath}/cliente">
                 <i class="bi bi-person me-2"></i> Meu perfil
               </a></li>
-              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/cliente?acao=endereco">
+              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/cliente/endereco">
                 <i class="bi bi-geo-alt me-2"></i> Gerenciar endereço
               </a></li>
               <li><hr class="dropdown-divider"></li>
@@ -78,22 +77,22 @@
         <c:otherwise>
           <ul class="navbar-nav mx-auto nav-pill-wrap">
             <li class="nav-item">
-              <a class="${activeNav == 'dashboard' ? 'nav-link nav-pill active' : 'nav-link nav-pill'}" href="${pageContext.request.contextPath}/vendedor?acao=dashboard">
+              <a class="${activeNav == 'dashboard' ? 'nav-link nav-pill active' : 'nav-link nav-pill'}" href="${pageContext.request.contextPath}/vendedor/dashboard">
                 <i class="bi bi-house-door"></i><span>Home</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="${activeNav == 'novo_livro' ? 'nav-link nav-pill active' : 'nav-link nav-pill'}" href="${pageContext.request.contextPath}/livro?acao=novo">
+              <a class="${activeNav == 'novo_livro' ? 'nav-link nav-pill active' : 'nav-link nav-pill'}" href="${pageContext.request.contextPath}/livros/novo">
                 <i class="bi bi-plus-circle"></i><span>Novo produto</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="${activeNav == 'estoque' ? 'nav-link nav-pill active' : 'nav-link nav-pill'}" href="${pageContext.request.contextPath}/vendedor?acao=estoque">
+              <a class="${activeNav == 'estoque' ? 'nav-link nav-pill active' : 'nav-link nav-pill'}" href="${pageContext.request.contextPath}/vendedor/estoque">
                 <i class="bi bi-inbox"></i><span>Acervo</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="${activeNav == 'relatorio' ? 'nav-link nav-pill active' : 'nav-link nav-pill'}" href="${pageContext.request.contextPath}/vendedor?acao=relatorio">
+              <a class="${activeNav == 'relatorio' ? 'nav-link nav-pill active' : 'nav-link nav-pill'}" href="${pageContext.request.contextPath}/vendedor/relatorio">
                 <i class="bi bi-bag-check"></i><span>Vendas</span>
               </a>
             </li>

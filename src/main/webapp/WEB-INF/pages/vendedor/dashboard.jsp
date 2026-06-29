@@ -41,7 +41,7 @@
         </section>
 
         <section class="quote-card">
-            <p>“Ler é viajar sem sair do lugar.”</p>
+            <p>"Ler é viajar sem sair do lugar."</p>
             <small>Mario Quintana</small>
         </section>
     </div>
@@ -53,9 +53,9 @@
                 <h2 class="section-title h3 mb-0">Próximas ações</h2>
             </div>
             <div class="d-flex gap-2 flex-wrap">
-                <a href="${pageContext.request.contextPath}/livro?acao=novo" class="btn btn-brand">Cadastrar livro</a>
-                <a href="${pageContext.request.contextPath}/vendedor?acao=estoque" class="btn btn-ghost">Gerenciar estoque</a>
-                <a href="${pageContext.request.contextPath}/vendedor?acao=relatorio" class="btn btn-ghost">Ver relatórios</a>
+                <a href="${pageContext.request.contextPath}/livros/novo" class="btn btn-brand">Cadastrar livro</a>
+                <a href="${pageContext.request.contextPath}/vendedor/estoque" class="btn btn-ghost">Gerenciar estoque</a>
+                <a href="${pageContext.request.contextPath}/vendedor/relatorio" class="btn btn-ghost">Ver relatórios</a>
             </div>
         </div>
     </section>

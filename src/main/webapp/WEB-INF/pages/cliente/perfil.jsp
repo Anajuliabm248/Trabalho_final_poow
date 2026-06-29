@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page isELIgnored="false" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
@@ -54,7 +53,8 @@
             <p class="section-kicker">Atalhos</p>
             <h2 class="section-title h3 mb-3">Endereço</h2>
             <p class="muted">Mantenha seus dados de entrega prontos para o próximo checkout.</p>
-            <a class="btn btn-ghost w-100 mt-3" href="${pageContext.request.contextPath}/cliente?acao=endereco">
+            <%-- CORRIGIDO: /cliente?acao=endereco → /cliente/endereco --%>
+            <a class="btn btn-ghost w-100 mt-3" href="${pageContext.request.contextPath}/cliente/endereco">
                 <i class="bi bi-geo-alt me-2"></i> Gerenciar endereço
             </a>
         </aside>

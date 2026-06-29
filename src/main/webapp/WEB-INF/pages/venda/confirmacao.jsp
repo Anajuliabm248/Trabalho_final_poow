@@ -46,22 +46,22 @@
                 <div class="table-shell">
                     <table class="table">
                         <thead>
-                            <tr>
-                                <th>Livro</th>
-                                <th>Qtd</th>
-                                <th>Preço unit.</th>
-                                <th>Subtotal</th>
-                            </tr>
+                        <tr>
+                            <th>Livro</th>
+                            <th>Qtd</th>
+                            <th>Preço unit.</th>
+                            <th>Subtotal</th>
+                        </tr>
                         </thead>
                         <tbody>
-                            <c:forEach var="item" items="${itens}" varStatus="s">
-                                <tr>
-                                    <td>${livros[s.index].nome}</td>
-                                    <td>${item.quantidade}</td>
-                                    <td>R$ ${item.precoUni}</td>
-                                    <td>R$ ${item.subtotal}</td>
-                                </tr>
-                            </c:forEach>
+                        <c:forEach var="item" items="${itens}" varStatus="s">
+                            <tr>
+                                <td>${livros[s.index].nome}</td>
+                                <td>${item.quantidade}</td>
+                                <td>R$ ${item.precoUni}</td>
+                                <td>R$ ${item.subtotal}</td>
+                            </tr>
+                        </c:forEach>
                         </tbody>
                     </table>
                 </div>
@@ -69,10 +69,10 @@
         </div>
 
         <div class="d-flex gap-2 flex-wrap mt-4">
-            <a href="${pageContext.request.contextPath}/livro" class="btn btn-brand">
+            <a href="${pageContext.request.contextPath}/livros" class="btn btn-brand">
                 <i class="bi bi-book me-2"></i> Continuar comprando
             </a>
-            <a href="${pageContext.request.contextPath}/venda?acao=historico" class="btn btn-ghost">
+            <a href="${pageContext.request.contextPath}/venda/historico" class="btn btn-ghost">
                 Meus pedidos
             </a>
         </div>

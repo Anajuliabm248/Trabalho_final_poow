@@ -37,20 +37,20 @@
             <div class="table-shell">
                 <table class="table">
                     <thead>
-                        <tr>
-                            <th>Livro</th>
-                            <th>Qtd</th>
-                            <th>Subtotal</th>
-                        </tr>
+                    <tr>
+                        <th>Livro</th>
+                        <th>Qtd</th>
+                        <th>Subtotal</th>
+                    </tr>
                     </thead>
                     <tbody>
-                        <c:forEach var="item" items="${itens}" varStatus="s">
-                            <tr>
-                                <td>${livros[s.index].nome}</td>
-                                <td>${item.quantidade}</td>
-                                <td>R$ ${item.subtotal}</td>
-                            </tr>
-                        </c:forEach>
+                    <c:forEach var="item" items="${itens}" varStatus="s">
+                        <tr>
+                            <td>${livros[s.index].nome}</td>
+                            <td>${item.quantidade}</td>
+                            <td>R$ ${item.subtotal}</td>
+                        </tr>
+                    </c:forEach>
                     </tbody>
                 </table>
             </div>
@@ -75,7 +75,7 @@
                 <strong>R$ ${carrinho.valorTotal}</strong>
             </div>
 
-            <form method="post" action="${pageContext.request.contextPath}/venda" class="mt-4">
+            <form method="post" action="${pageContext.request.contextPath}/venda/finalizar" class="mt-4">
                 <div class="mb-3">
                     <label class="form-label">Forma de pagamento</label>
                     <select name="formaPagamento" class="form-select">

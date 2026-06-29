@@ -31,7 +31,7 @@
     </section>
 
     <section class="surface search-panel mt-4">
-        <form method="get" action="${pageContext.request.contextPath}/livro" class="search-bar">
+        <form method="get" action="${pageContext.request.contextPath}/livros" class="search-bar">
             <div class="position-relative">
                 <input type="text" name="busca" class="form-control" placeholder="Buscar por título..." value="${param.busca}">
             </div>
@@ -92,7 +92,7 @@
                                 <div class="stock">Estoque: ${livro.quantidade}</div>
                             </div>
 
-                            <a class="card-action" href="${pageContext.request.contextPath}/livro?acao=detalhe&id=${livro.id}" title="Ver detalhes">
+                            <a class="card-action" href="${pageContext.request.contextPath}/livros/${livro.id}" title="Ver detalhes">
                                 <i class="bi bi-arrow-right"></i>
                             </a>
                         </div>

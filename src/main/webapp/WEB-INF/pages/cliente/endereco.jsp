@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page isELIgnored="false" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
@@ -32,9 +31,7 @@
             <div class="alert-soft mb-3">Cadastre um endereço antes de finalizar a compra.</div>
         </c:if>
 
-        <form method="post" action="${pageContext.request.contextPath}/cliente">
-            <input type="hidden" name="acao" value="endereco" />
-
+        <form method="post" action="${pageContext.request.contextPath}/cliente/endereco">
             <div class="row g-3">
                 <div class="col-md-3">
                     <label class="form-label" for="cep">CEP</label>

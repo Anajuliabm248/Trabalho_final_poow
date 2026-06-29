@@ -83,8 +83,7 @@
             <c:if test="${sessionScope.usuario != null and sessionScope.usuario.tipo == 'CLIENTE'}">
                 <c:choose>
                     <c:when test="${livro.quantidade > 0}">
-                        <form method="post" action="${pageContext.request.contextPath}/carrinho" class="row g-3 align-items-end">
-                            <input type="hidden" name="acao" value="adicionar" />
+                        <form method="post" action="${pageContext.request.contextPath}/carrinho/adicionar" class="row g-3 align-items-end">
                             <input type="hidden" name="livroId" value="${livro.id}" />
 
                             <div class="col-sm-4">
@@ -96,7 +95,7 @@
                                 <button type="submit" class="btn btn-brand">
                                     <i class="bi bi-cart-plus me-2"></i> Adicionar ao carrinho
                                 </button>
-                                <a href="${pageContext.request.contextPath}/livro" class="btn btn-ghost">
+                                <a href="${pageContext.request.contextPath}/livros" class="btn btn-ghost">
                                     Voltar ao catálogo
                                 </a>
                             </div>
@@ -104,7 +103,7 @@
                     </c:when>
                     <c:otherwise>
                         <div class="alert-soft">Produto indisponível no momento.</div>
-                        <a href="${pageContext.request.contextPath}/livro" class="btn btn-ghost mt-3">Voltar ao catálogo</a>
+                        <a href="${pageContext.request.contextPath}/livros" class="btn btn-ghost mt-3">Voltar ao catálogo</a>
                     </c:otherwise>
                 </c:choose>
             </c:if>
