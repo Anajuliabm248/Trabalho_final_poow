@@ -54,8 +54,4 @@ public class LivroService {
         return livroRepository.excluir(livroId, vendedorId);
     }
 
-    @Transactional
-    public void atualizarEstoque(int livroId, int quantidade) {
-        livroRepository.atualizarEstoque(livroId, quantidade);
-    }
 }

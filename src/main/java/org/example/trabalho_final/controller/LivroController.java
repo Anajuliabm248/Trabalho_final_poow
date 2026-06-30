@@ -157,7 +157,7 @@ public class LivroController {
     @PostMapping
     public String salvar(
             Livro livro,
-            @RequestParam("imgCapa") MultipartFile arquivo,
+            @RequestParam("arquivo") MultipartFile arquivo,
             HttpSession session,
             Model model) throws IOException {
 

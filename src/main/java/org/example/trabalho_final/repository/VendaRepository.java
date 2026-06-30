@@ -44,7 +44,7 @@ public class VendaRepository {
 
             PreparedStatement ps = connection.prepareStatement(
                     sql,
-                    Statement.RETURN_GENERATED_KEYS
+                    new String[]{"id"}
             );
 
             ps.setInt(1, venda.getClienteId());

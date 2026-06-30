@@ -35,7 +35,6 @@
         <small class="muted">* indica campo obrigatório</small>
     </header>
 
-    <%-- CORRIGIDO: action /livro → /livros --%>
     <form method="post" action="${pageContext.request.contextPath}/livros" enctype="multipart/form-data" class="livro-form-card">
         <input type="hidden" name="id" value="${livro.id}" />
 
@@ -59,7 +58,7 @@
                 <label for="imagem" class="upload-btn">
                     <i class="bi bi-upload"></i> Faça upload de um arquivo
                 </label>
-                <input type="file" id="imagem" name="imgCapa" accept="image/*" class="d-none">
+                <input type="file" id="imagem" name="arquivo" accept="image/*" class="d-none">
             </aside>
 
             <section class="form-card surface">
@@ -130,7 +129,6 @@
                         <button type="submit" class="btn btn-brand">
                             <i class="bi bi-floppy me-2"></i> Salvar produto
                         </button>
-                        <%-- CORRIGIDO: /vendedor?acao=estoque → /vendedor/estoque --%>
                         <a href="${pageContext.request.contextPath}/vendedor/estoque" class="btn btn-ghost">
                             Cancelar
                         </a>
